@@ -1,14 +1,6 @@
 import socket
 import os
 
-def clear_screen():
-    """Função para limpar a tela."""
-    # Verifica o sistema operacional e usa o comando apropriado para limpar a tela
-    if os.name == 'nt':  # Para Windows
-        os.system('cls')
-    else:               # Para Unix/Linux/MacOS
-        os.system('clear')
-
 def main():
     host = '127.0.0.1'  # Host onde o servidor está rodando
     port = 5000         # Porta em que o servidor está escutando
@@ -28,7 +20,7 @@ def main():
 
         while True:
 
-            clear_screen()
+            os.system('cls')
 
             # Solicita a escolha do jogador
             print("Escolha uma opção:")

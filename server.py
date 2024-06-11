@@ -42,14 +42,7 @@ def handle_client(client_socket):
             if not request:
                 break
             
-            try:
-                player_choice = int(request)
-                if player_choice not in [0, 1, 2]:
-                    raise ValueError()
-            except ValueError:
-                response = "Entrada inválida. Envie 0 para Pedra, 1 para Papel, ou 2 para Tesoura.\n"
-                client_socket.send(response.encode('utf-8'))
-                continue
+            player_choice = int(request)
             
             # Gera a escolha da máquina
             machine_choice = random.randint(0, 2)
